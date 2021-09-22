@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block content %}
+
+<!--	50% IZQ - TABLA DE DATOS -->	
+
+
+	<div class='base'>
+		<div class='contenido_form'>
+			<p class="titulo">CREAR POST</p>
+			<form enctype ="multipart/form-data" method="post">
+				{% csrf_token %}
+				{{form_post.titulo}}
+				<br>
+				{{form_post.imagen.label}} {{form_post.imagen}}
+				<br>
+				{{form_post.texto}}
+				<br>
+				<br>
+				<br>
+				<button type="reset" value="Reset">
+					<img class ="icono" src="{% static '../template_project/static/img/refresh.png' %}" alt="Reset" title="Reset">  Reset
+				</button>
+				<button class="login_form" type="submit">
+					<img class ="icono" src="{% static '../template_project/static/img/send.png' %}" alt="Cargar" title="Cargar">  Subir
+				</button>
+				{% for message in messages %}
+					<p>[MSG FROM CONTROLLER] {{message}}</p>
+				{% endfor %}
+			</form>
+			<br>
+		</div>
+	</div>
+
+
+
+{% endblock %}

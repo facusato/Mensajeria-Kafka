@@ -1,0 +1,1 @@
+[2021-09-17 00:46:14,635] WARN Exception causing close of session 0x1000001d5b70000: Se ha forzado la interrupción de una conexión existente por el host remoto (org.apache.zookeeper.server.NIOServerCnxn)

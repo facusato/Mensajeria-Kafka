@@ -1,0 +1,16 @@
+...............................................
+comentarios de la version del codigo 
+...............................................
+
+
+ya esta creada la bd con las tablas de django y del models.py incluidas.
+
+la app esta lista de cero , sin usuarios creados.
+
+acepta contraseñas que contengan una mayuscula, letras y numeros de al menos 8 caracteres
+
+los topics de kafka se crean en la carpeta kafka/bin/windows/..
+
+dentro de la carpeta batch se encuentran scripts numerados para poner en servicio la app
+
+ejecutar en orden los scrpits 3 (levanta zookeeper), 4 (levanta kafka) y 5 (levanta django)

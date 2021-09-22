@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block content %}
+
+<!--	50% IZQ - TABLA DE DATOS -->	
+
+	<div class='contenido_form'>
+		<p class="titulo">LISTA DE POSTS EN TOPIC NEWS DESDE SERVER KAFKA.</p>
+
+				{% for item in item_list %}
+				<div class="post">
+					<form method="post">
+					{% csrf_token %}
+
+					<h3>{{ item.autor }} publico:</h3>	
+
+					<h1>{{ item.titulo }}</h1>
+					<img src="{{item.imagen}}" alt="" width="250" height="100"> </img>
+					<p>{{ item.text }}</p>&#160;
+
+
+					<input type="hidden" name="autor" id="id_autor" value= "{{item.autor}}"> 
+					<input type="hidden" name="titulo" id="id_titulo" value="{{item.titulo}}">
+					<input type="hidden" name="texto" id="id_texto" value= "{{item.text}}">
+
+
+					<button class="login_form" type="submit">
+					<img class ="icono" src="{% static '../template_project/static/img/like.png' %}" alt="Like" title="Like">  Like
+					</button>
+					</form>
+				</div>
+				{% endfor %}
+
+			<br>
+	</div>
+
+
+
+
+
+
+{% endblock %}
