@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block content %}
+
+<!--	50% IZQ - TABLA DE DATOS -->	
+
+	<div class='contenido_form'>
+		<p class="titulo">BUSCAR USUARIOS PARA SEGUIR</p>
+
+					<form enctype ="multipart/form-data" method="post">
+						{% csrf_token %}
+
+							{{form_msg.mensaje }} &#160;
+							<button class="login_form" type="submit">
+							<img class ="icono" src="{% static '../template_project/static/img/search.png' %}" alt="Seguir" title="Seguir">  Seguir
+							</button>
+
+							{% for message in messages %}
+								<p>{{message}}</p>
+							{% endfor %}
+							
+					</form>
+
+			<br>
+		</div>
+	</div>
+
+
+
+
+
+
+{% endblock %}

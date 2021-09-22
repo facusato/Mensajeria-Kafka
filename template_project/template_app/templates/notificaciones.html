@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block content %}
+
+<!--	50% IZQ - TABLA DE DATOS -->	
+
+	<div class='contenido_form'>
+		<p class="titulo">LISTA DE MENSAJES EN TOPIC SEGUIDORES DESDE SERVER KAFKA.</p>
+		<div class='table_container'>
+			<table class="tabla">
+				<tr>
+					<th>MENSAJE</th>
+				</tr>
+				{% for item in item_list_seg %}
+				<tr>
+					<td>{{ item }} </td> 
+				</tr>
+				{% endfor %}
+			</table>
+			<br>
+		</div>
+	</div>
+
+	<div class='contenido_form'>
+		<p class="titulo">LISTA DE MENSAJES EN TOPIC LIKES DESDE SERVER KAFKA.</p>
+		<div class='table_container'>
+			<table class="tabla">
+				<tr>
+					<th>MENSAJE</th>
+				</tr>
+				{% for item in item_list_likes %}
+				<tr>
+					<td>{{ item }} </td> 
+				</tr>
+				{% endfor %}
+			</table>
+			<br>
+		</div>
+	</div>
+
+
+
+
+
+
+{% endblock %}
